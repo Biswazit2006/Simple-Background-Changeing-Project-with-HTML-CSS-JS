@@ -1,33 +1,32 @@
 const body= document.querySelector("body");
 const btn = document.querySelector(".btn")
+const card = document.querySelectorAll("li")
 
-const red = document.querySelector(".red")
-const green = document.querySelector(".green")
-const blue = document.querySelector(".blue")
-const yellow = document.querySelector(".yellow")
-const sky = document.querySelector(".sky")
-// sky.style.backgroundColor="black";
+card.forEach(function(value){
+    // console.log(value);
+    value.addEventListener('click',function(){
+        let colourClass = this.classList.value;
+        let color;
+        switch(colourClass){
+            case 'red': color="#eb4d4b"
+            break;
+            case 'green': color="#2ed573 "
+            break;
+            case 'blue': color="#3742fa "
+            break;
+            case 'yellow': color="#eccc68 "
+            break;
+            case 'pink': color="#e056fd "
+            break;
+            default: color="#95afc0"
+        }
+        console.log(colourClass);
+        body.style.backgroundColor = color;
+    });
 
-const  card = document.querySelector("li");
-// card.style.backgroundColor = "black"
+    // console.log(value);
+});
 
-if(red.addEventListener("click",()=>{
-    body.style.backgroundColor= "#ff4757";
-})){}
-
-else if(green.addEventListener("click",()=>{
-    body.style.backgroundColor= "#2ed573";
-})){}
-
-else if (blue.addEventListener("click",()=>{
-    body.style.backgroundColor= "#3742fa";
-})){}
-else if (yellow.addEventListener("click",()=>{
-    body.style.backgroundColor= "#eccc68";
-})){}
-else if((sky.addEventListener("click",()=>{
-    body.style.backgroundColor= "#a4b0be";
-}))){}
-else if ((btn.addEventListener("click",()=>{
-    body.style.backgroundColor= "#f1f2f6";
-}))){}
+btn.addEventListener("click",()=>{
+    body.style.backgroundColor = '#95afc0';
+})
